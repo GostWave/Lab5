@@ -42,7 +42,10 @@ public class CollectionChecker {
             System.out.println(" оординаты фильма не могут быть пустыми");
             return false;
         } else if (coordinates.getY() == null){
-            System.out.println(" оордината Y фильма не может быть пустой");
+            System.out.println(" оордината Y фильма записана неверно: она должна быть числом типа Long");
+            return false;
+        } else if (coordinates.getX() == null) {
+            System.out.println(" оордината X фильма записана неверно: она должна быть числом типа double");
             return false;
         } else if (coordinates.getX()>160){
             System.out.println(" оордината X фильма не может быть больше 160");
@@ -50,9 +53,6 @@ public class CollectionChecker {
         } else if (coordinates.getY()>170){
             System.out.println(" оордината Y фильма не может быть больше 170");
             return false;
-//        } else if (Double.isNaN(coordinates.getX())){
-//            System.out.println(" оордината X должна быть числом");
-//            return false;
         } else {
             return true;
 

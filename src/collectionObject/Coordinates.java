@@ -5,7 +5,7 @@ package collectionObject;
  */
 public class Coordinates {
 
-    private double x; // Максимальное значение поля: 160
+    private Double x; // Максимальное значение поля: 160
     private Long y; // Максимальное значение поля: 170, Поле не может быть null
 
     /**
@@ -14,7 +14,7 @@ public class Coordinates {
      *
      * @param x координата X
      */
-    public void setX(double x) {
+    public void setX(Double x) {
         this.x = x;
     }
 
@@ -33,7 +33,7 @@ public class Coordinates {
      *
      * @return координата X
      */
-    public double getX() {
+    public Double getX() {
         return x;
     }
 

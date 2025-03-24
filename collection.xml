@@ -3,17 +3,17 @@
     <movie id="1">
         <name>qwe</name>
         <coordinates>
-            <x>asd</x>
-            <y>13</y>
+            <x>2</x>
+            <y>23</y>
         </coordinates>
         <genre>ACTION</genre>
         <mpaaRating>R</mpaaRating>
-        <oscarsCount>12</oscarsCount>
+        <oscarsCount>234</oscarsCount>
         <operator>
             <birthday>0004-04-04T00:00:00+02:30:17[Europe/Moscow]</birthday>
-            <name>ewr</name>
-            <passportID>23423234</passportID>
+            <name>qwre</name>
+            <passportID>1231231</passportID>
         </operator>
-        <creationDate>2025-03-23</creationDate>
+        <creationDate>2025-03-24</creationDate>
     </movie>
 </movies>
