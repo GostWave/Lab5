@@ -131,6 +131,7 @@ public class Movie implements Comparable<Movie> {
     }
 
     /**
+     *
      * Устанавливает жанр фильма.
      *
      * @param genre жанр фильма
