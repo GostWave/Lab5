@@ -8,6 +8,7 @@ import collectionObject.Movies;
 import jakarta.xml.bind.JAXBException;
 
 import java.io.*;
+import java.nio.file.AccessDeniedException;
 import java.util.Scanner;
 
 
@@ -46,8 +47,13 @@ public class FileManager {
 
         if (file != null) {
             if (file.exists()) {
-                fileReader(file);
-                textToObject();
+                if (!file.canRead()){
+                    System.out.println("Ошибка: Нет прав доступа к файлу. Программа будет завершена");
+                    System.exit(0);
+                } else {
+                    fileReader(file);
+                    textToObject();
+                }
             } else {
                 try {
                     file.createNewFile();
@@ -73,10 +79,11 @@ public class FileManager {
             if (scanner.hasNext()) {
                 text = scanner.next();
             }
-        } catch (FileNotFoundException e) {
-            System.out.println("Отсутствует файл, из которого нужно импортировать коллекцию");
+        } catch (FileNotFoundException e){
+                System.out.println("Ошибка: отсутствует файл");
+            }
         }
-    }
+
 
     /**
      * Преобразует текстовые данные в объект коллекции и загружает их в менеджер коллекции.
