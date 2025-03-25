@@ -52,7 +52,8 @@ public class FileManager {
                 try {
                     file.createNewFile();
                 } catch (IOException e) {
-                    System.out.println("Неверное имя файла");;
+                    System.out.println("Неверное имя файла. Программа будет завершена");
+                    System.exit(0);
                 }
             }
         }
