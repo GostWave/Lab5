@@ -47,6 +47,9 @@ public class CollectionManager {
             }
         }
     }
+    public Long getCurrentid(){
+        return ++currentid;
+    }
 
     /**
      * ”станавливает и сортирует текущую коллекцию.
@@ -152,9 +155,8 @@ public class CollectionManager {
      *
      * @param index индекс, куда будет добавлен фильм
      */
-    public void insertElement(int index) {
+    public void insertElement(Movie movie,int index) {
         try {
-            Movie movie = createMovie();
             collection.add(index, movie);
             System.out.println("Ёлемент успешно добавлен в коллекцию");
         } catch (IndexOutOfBoundsException e) {

@@ -2,6 +2,7 @@ package commands;
 
 import app.App;
 import app.CollectionManager;
+import collectionObject.Movie;
 
 /**
  * Класс команды Insert, предназначенный для добавления нового элемента в коллекцию
@@ -18,7 +19,8 @@ public class Insert implements Command {
     public void execute(String argument) {
         try {
             CollectionManager collectionManager = App.getApp().getCollectionManager();
-            collectionManager.insertElement(Integer.parseInt(argument));
+            Movie movie = collectionManager.createMovie();
+            collectionManager.insertElement(movie, Integer.parseInt(argument));
         } catch (NumberFormatException e) {
             System.out.println("Введён неверный аргумент команды");
         }
