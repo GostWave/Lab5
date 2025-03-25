@@ -5,6 +5,7 @@ import app.ConsoleCaller;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -20,17 +21,28 @@ public class ExecuteScript implements Command {
      */
     @Override
     public void execute(String argument) {
+        HashSet<String> callScripts= new HashSet<>();
         try {
             Scanner scanner = new Scanner(new File(argument));
+
             while (scanner.hasNext()) {
-                String text = scanner.nextLine();
+                String text = scanner.nextLine().trim();
                 System.out.println(text);
-                consoleCaller.call(text);
+                if (text.length()>4 && text.substring(text.length() - 4).equals(".txt")){
+                    callScripts.add(text.split(" ")[1]);
+                }
+                if (text.substring(text.length() - 4).equals(".txt") && callScripts.contains(text.split(" ")[1])){
+                    System.out.println("Возникла рекурсия");
+                    break;
+                } else {
+                    consoleCaller.call(text);
+                }
+
+
+
             }
         } catch (FileNotFoundException e) {
             System.out.println("Введено неверное имя файла или необходимый файл отсутствует");
-        } catch (StackOverflowError e) {
-            System.out.println("Ошибка: не должно возникать рекурсии");
         }
     }
 
