@@ -4,36 +4,36 @@ import app.App;
 import app.CollectionManager;
 
 /**
- * Класс команды Update, предназначенный для обновления значения элемента коллекции по его ID.
+ * РљР»Р°СЃСЃ РєРѕРјР°РЅРґС‹ Update, РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅРЅС‹Р№ РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РєРѕР»Р»РµРєС†РёРё РїРѕ РµРіРѕ ID.
  */
 public class Update implements Command {
 
     /**
-     * Выполняет команду обновления элемента коллекции по указанному ID.
+     * Р’С‹РїРѕР»РЅСЏРµС‚ РєРѕРјР°РЅРґСѓ РѕР±РЅРѕРІР»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РєРѕР»Р»РµРєС†РёРё РїРѕ СѓРєР°Р·Р°РЅРЅРѕРјСѓ ID.
      *
-     * @param argument строка, содержащая ID элемента для обновления
+     * @param argument СЃС‚СЂРѕРєР°, СЃРѕРґРµСЂР¶Р°С‰Р°СЏ ID СЌР»РµРјРµРЅС‚Р° РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ
      */
     @Override
     public void execute(String argument) {
         try {
             CollectionManager collectionManager = App.getApp().getCollectionManager();
             if (collectionManager.findMovieById(Long.parseLong(argument)) == null) {
-                System.out.println("В коллекции не содержится элемента с таким индексом");
+                System.out.println("Р’ РєРѕР»Р»РµРєС†РёРё РЅРµ СЃРѕРґРµСЂР¶РёС‚СЃСЏ СЌР»РµРјРµРЅС‚Р° СЃ С‚Р°РєРёРј РёРЅРґРµРєСЃРѕРј");
             } else {
                 collectionManager.updateElement(Long.parseLong(argument), collectionManager.findMovieById(Long.parseLong(argument)));
             }
         } catch (NumberFormatException e) {
-            System.out.println("Введён неверный аргумент команды");
+            System.out.println("Р’РІРµРґС‘РЅ РЅРµРІРµСЂРЅС‹Р№ Р°СЂРіСѓРјРµРЅС‚ РєРѕРјР°РЅРґС‹");
         }
     }
 
     /**
-     * Возвращает описание команды.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕРїРёСЃР°РЅРёРµ РєРѕРјР°РЅРґС‹.
      *
-     * @return строка с описанием команды
+     * @return СЃС‚СЂРѕРєР° СЃ РѕРїРёСЃР°РЅРёРµРј РєРѕРјР°РЅРґС‹
      */
     @Override
     public String getDescription() {
-        return "обновить значение элемента коллекции, id которого равен заданному";
+        return "РѕР±РЅРѕРІРёС‚СЊ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РєРѕР»Р»РµРєС†РёРё, id РєРѕС‚РѕСЂРѕРіРѕ СЂР°РІРµРЅ Р·Р°РґР°РЅРЅРѕРјСѓ";
     }
 }

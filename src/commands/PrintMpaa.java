@@ -6,19 +6,19 @@ import app.CollectionManager;
 import java.util.HashSet;
 
 /**
- * Класс команды PrintMpaa, предназначенный для вывода уникальных значений поля mpaaRating всех элементов в коллекции.
+ * РљР»Р°СЃСЃ РєРѕРјР°РЅРґС‹ PrintMpaa, РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅРЅС‹Р№ РґР»СЏ РІС‹РІРѕРґР° СѓРЅРёРєР°Р»СЊРЅС‹С… Р·РЅР°С‡РµРЅРёР№ РїРѕР»СЏ mpaaRating РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ РІ РєРѕР»Р»РµРєС†РёРё.
  */
 public class PrintMpaa implements Command {
 
     /**
-     * Выполняет команду, выводя уникальные значения поля mpaaRating из коллекции.
+     * Р’С‹РїРѕР»РЅСЏРµС‚ РєРѕРјР°РЅРґСѓ, РІС‹РІРѕРґСЏ СѓРЅРёРєР°Р»СЊРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»СЏ mpaaRating РёР· РєРѕР»Р»РµРєС†РёРё.
      */
     @Override
     public void execute(String argument) {
         CollectionManager collectionManager = App.getApp().getCollectionManager();
         HashSet<String> set = collectionManager.uniqueMpaa();
         if (collectionManager.getCollection().isEmpty()) {
-            System.out.println("Коллекция пуста, невозможно вывести уникальные mpaaRating");
+            System.out.println("РљРѕР»Р»РµРєС†РёСЏ РїСѓСЃС‚Р°, РЅРµРІРѕР·РјРѕР¶РЅРѕ РІС‹РІРµСЃС‚Рё СѓРЅРёРєР°Р»СЊРЅС‹Рµ mpaaRating");
         } else {
             for (String mpaa : set) {
                 System.out.println(mpaa);
@@ -27,12 +27,12 @@ public class PrintMpaa implements Command {
     }
 
     /**
-     * Возвращает описание команды.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕРїРёСЃР°РЅРёРµ РєРѕРјР°РЅРґС‹.
      *
-     * @return строка с описанием команды
+     * @return СЃС‚СЂРѕРєР° СЃ РѕРїРёСЃР°РЅРёРµРј РєРѕРјР°РЅРґС‹
      */
     @Override
     public String getDescription() {
-        return "вывести уникальные значения поля mpaaRating всех элементов в коллекции";
+        return "РІС‹РІРµСЃС‚Рё СѓРЅРёРєР°Р»СЊРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»СЏ mpaaRating РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ РІ РєРѕР»Р»РµРєС†РёРё";
     }
 }

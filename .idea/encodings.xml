@@ -10,28 +10,28 @@
     <file url="file://$PROJECT_DIR$/src/app/CommandManager.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/app/ConsoleCaller.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/app/MovieFiller.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/collectionObject/Coordinates.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/collectionObject/Movie.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/collectionObject/MovieGenre.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/collectionObject/Movies.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/collectionObject/MpaaRating.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/collectionObject/Person.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/Add.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/AddIfMax.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/Clear.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/Command.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/ExecuteScript.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/GroupCounting.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/Help.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/Info.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/Insert.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/PrintMpaa.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/PrintOscarsCount.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/Remove.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/Save.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/Show.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/Shuffle.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/commands/Update.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/collectionObject/Coordinates.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/collectionObject/Movie.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/collectionObject/MovieGenre.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/collectionObject/Movies.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/collectionObject/MpaaRating.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/collectionObject/Person.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/Add.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/AddIfMax.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/Clear.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/Command.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/ExecuteScript.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/GroupCounting.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/Help.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/Info.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/Insert.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/PrintMpaa.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/PrintOscarsCount.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/Remove.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/Save.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/Show.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/Shuffle.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commands/Update.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/lab5/Main.java" charset="windows-1251" />
   </component>
 </project>

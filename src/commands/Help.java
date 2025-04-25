@@ -6,30 +6,30 @@ import app.CommandManager;
 import java.util.Map;
 
 /**
- * Класс команды Help, предназначенный для вывода справки по доступным командам.
+ * РљР»Р°СЃСЃ РєРѕРјР°РЅРґС‹ Help, РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅРЅС‹Р№ РґР»СЏ РІС‹РІРѕРґР° СЃРїСЂР°РІРєРё РїРѕ РґРѕСЃС‚СѓРїРЅС‹Рј РєРѕРјР°РЅРґР°Рј.
  */
 public class Help implements Command {
 
     /**
-     * Выполняет команду вывода списка доступных команд и их описаний.
+     * Р’С‹РїРѕР»РЅСЏРµС‚ РєРѕРјР°РЅРґСѓ РІС‹РІРѕРґР° СЃРїРёСЃРєР° РґРѕСЃС‚СѓРїРЅС‹С… РєРѕРјР°РЅРґ Рё РёС… РѕРїРёСЃР°РЅРёР№.
      */
     @Override
     public void execute(String argument) {
         CommandManager commandManager = App.getApp().getCommandManager();
         Map<String, Command> commands = commandManager.getCommands();
-        System.out.println("Список доступных команд:");
+        System.out.println("РЎРїРёСЃРѕРє РґРѕСЃС‚СѓРїРЅС‹С… РєРѕРјР°РЅРґ:");
         for (Map.Entry<String, Command> entry : commands.entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue().getDescription());
         }
     }
 
     /**
-     * Возвращает описание команды.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕРїРёСЃР°РЅРёРµ РєРѕРјР°РЅРґС‹.
      *
-     * @return строка с описанием команды
+     * @return СЃС‚СЂРѕРєР° СЃ РѕРїРёСЃР°РЅРёРµРј РєРѕРјР°РЅРґС‹
      */
     @Override
     public String getDescription() {
-        return "вывести справку по доступным командам";
+        return "РІС‹РІРµСЃС‚Рё СЃРїСЂР°РІРєСѓ РїРѕ РґРѕСЃС‚СѓРїРЅС‹Рј РєРѕРјР°РЅРґР°Рј";
     }
 }

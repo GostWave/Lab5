@@ -4,31 +4,31 @@ import app.App;
 import app.CollectionManager;
 
 /**
- * Класс команды Clear, предназначенный для очистки коллекции.
+ * РљР»Р°СЃСЃ РєРѕРјР°РЅРґС‹ Clear, РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅРЅС‹Р№ РґР»СЏ РѕС‡РёСЃС‚РєРё РєРѕР»Р»РµРєС†РёРё.
  */
 public class Clear implements Command {
 
     /**
-     * Выполняет команду очистки коллекции.
+     * Р’С‹РїРѕР»РЅСЏРµС‚ РєРѕРјР°РЅРґСѓ РѕС‡РёСЃС‚РєРё РєРѕР»Р»РµРєС†РёРё.
      */
     @Override
     public void execute(String argument) {
         CollectionManager collectionManager = App.getApp().getCollectionManager();
         if (collectionManager.getCollection().isEmpty()) {
-            System.out.println("Коллекция не содержит элементов, которые можно было бы очистить");
+            System.out.println("РљРѕР»Р»РµРєС†РёСЏ РЅРµ СЃРѕРґРµСЂР¶РёС‚ СЌР»РµРјРµРЅС‚РѕРІ, РєРѕС‚РѕСЂС‹Рµ РјРѕР¶РЅРѕ Р±С‹Р»Рѕ Р±С‹ РѕС‡РёСЃС‚РёС‚СЊ");
         } else {
             collectionManager.clearCollection();
-            System.out.println("Коллекция успешно очищена");
+            System.out.println("РљРѕР»Р»РµРєС†РёСЏ СѓСЃРїРµС€РЅРѕ РѕС‡РёС‰РµРЅР°");
         }
     }
 
     /**
-     * Возвращает описание команды.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕРїРёСЃР°РЅРёРµ РєРѕРјР°РЅРґС‹.
      *
-     * @return строка с описанием команды
+     * @return СЃС‚СЂРѕРєР° СЃ РѕРїРёСЃР°РЅРёРµРј РєРѕРјР°РЅРґС‹
      */
     @Override
     public String getDescription() {
-        return "очистить коллекцию";
+        return "РѕС‡РёСЃС‚РёС‚СЊ РєРѕР»Р»РµРєС†РёСЋ";
     }
 }

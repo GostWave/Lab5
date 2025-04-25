@@ -4,31 +4,31 @@ import app.App;
 import app.CollectionManager;
 
 /**
- * Класс команды PrintOscarsCount, предназначенный для вывода значений поля oscarsCount
- * всех элементов коллекции в порядке возрастания.
+ * РљР»Р°СЃСЃ РєРѕРјР°РЅРґС‹ PrintOscarsCount, РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅРЅС‹Р№ РґР»СЏ РІС‹РІРѕРґР° Р·РЅР°С‡РµРЅРёР№ РїРѕР»СЏ oscarsCount
+ * РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ РєРѕР»Р»РµРєС†РёРё РІ РїРѕСЂСЏРґРєРµ РІРѕР·СЂР°СЃС‚Р°РЅРёСЏ.
  */
 public class PrintOscarsCount implements Command {
 
     /**
-     * Выполняет команду, выводя значения поля oscarsCount всех элементов в коллекции.
+     * Р’С‹РїРѕР»РЅСЏРµС‚ РєРѕРјР°РЅРґСѓ, РІС‹РІРѕРґСЏ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»СЏ oscarsCount РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ РІ РєРѕР»Р»РµРєС†РёРё.
      */
     @Override
     public void execute(String argument) {
         CollectionManager collectionManager = App.getApp().getCollectionManager();
         if (collectionManager.getCollection().isEmpty()) {
-            System.out.println("Коллекция пуста, невозможно вывести oscarsCount");
+            System.out.println("РљРѕР»Р»РµРєС†РёСЏ РїСѓСЃС‚Р°, РЅРµРІРѕР·РјРѕР¶РЅРѕ РІС‹РІРµСЃС‚Рё oscarsCount");
         } else {
             collectionManager.printOscarsCount();
         }
     }
 
     /**
-     * Возвращает описание команды.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕРїРёСЃР°РЅРёРµ РєРѕРјР°РЅРґС‹.
      *
-     * @return строка с описанием команды
+     * @return СЃС‚СЂРѕРєР° СЃ РѕРїРёСЃР°РЅРёРµРј РєРѕРјР°РЅРґС‹
      */
     @Override
     public String getDescription() {
-        return "вывести значения поля oscarsCount всех элементов в порядке возрастания";
+        return "РІС‹РІРµСЃС‚Рё Р·РЅР°С‡РµРЅРёСЏ РїРѕР»СЏ oscarsCount РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ РІ РїРѕСЂСЏРґРєРµ РІРѕР·СЂР°СЃС‚Р°РЅРёСЏ";
     }
 }

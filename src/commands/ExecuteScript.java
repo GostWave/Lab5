@@ -16,16 +16,16 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 /**
- * Класс команды ExecuteScript, предназначенный для выполнения команд из указанного файла.
+ * РљР»Р°СЃСЃ РєРѕРјР°РЅРґС‹ ExecuteScript, РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅРЅС‹Р№ РґР»СЏ РІС‹РїРѕР»РЅРµРЅРёСЏ РєРѕРјР°РЅРґ РёР· СѓРєР°Р·Р°РЅРЅРѕРіРѕ С„Р°Р№Р»Р°.
  */
 public class ExecuteScript implements Command {
     final ConsoleCaller consoleCaller = App.getApp().getConsoleCaller();
     CollectionManager collectionManager = App.getApp().getCollectionManager();
     Movie movie ;
     /**
-     * Выполняет команду, считывая команды из файла и выполняя их последовательно.
+     * Р’С‹РїРѕР»РЅСЏРµС‚ РєРѕРјР°РЅРґСѓ, СЃС‡РёС‚С‹РІР°СЏ РєРѕРјР°РЅРґС‹ РёР· С„Р°Р№Р»Р° Рё РІС‹РїРѕР»РЅСЏСЏ РёС… РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕ.
      *
-     * @param argument имя файла, содержащего команды для выполнения
+     * @param argument РёРјСЏ С„Р°Р№Р»Р°, СЃРѕРґРµСЂР¶Р°С‰РµРіРѕ РєРѕРјР°РЅРґС‹ РґР»СЏ РІС‹РїРѕР»РЅРµРЅРёСЏ
      */
     @Override
     public void execute(String argument) {
@@ -40,7 +40,7 @@ public class ExecuteScript implements Command {
                     callScripts.add(text.split(" ")[1]);
                 }
                 if (text.length()>4 && text.substring(text.length() - 4).equals(".txt") && callScripts.contains(text.split(" ")[1])){
-                    System.out.println("Возникла рекурсия");
+                    System.out.println("Р’РѕР·РЅРёРєР»Р° СЂРµРєСѓСЂСЃРёСЏ");
                     break;
                 } else if (text.equals("add")){
                     if (element(scanner)){
@@ -51,24 +51,24 @@ public class ExecuteScript implements Command {
                         try {
                             collectionManager.updateElement(Long.parseLong(text.split(" ")[1]),movie);
                         } catch (NumberFormatException e) {
-                            System.out.println("Ошибка при выполнении скрипта");
+                            System.out.println("РћС€РёР±РєР° РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё СЃРєСЂРёРїС‚Р°");
                         }
                     }
                 } else if (text.contains("insert")){
                     try {
                         collectionManager.insertElement(movie,Integer.parseInt(text.split(" ")[1]));
                     } catch (NumberFormatException e) {
-                        System.out.println("Ошибка при выполнении скрипта");
+                        System.out.println("РћС€РёР±РєР° РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё СЃРєСЂРёРїС‚Р°");
                     }
                 } else if (text.contains("add_if_max")){
                     try {
                         if (movie.getOscarsCount() > collectionManager.getMaxOscarsCount()) {
                             collectionManager.addMovie(movie);
                         } else {
-                            System.out.println("Элемент не был добавлен в коллекцию");
+                            System.out.println("Р­Р»РµРјРµРЅС‚ РЅРµ Р±С‹Р» РґРѕР±Р°РІР»РµРЅ РІ РєРѕР»Р»РµРєС†РёСЋ");
                         }
                     } catch (NumberFormatException e) {
-                        System.out.println("Ошибка при выполнении скрипта");
+                        System.out.println("РћС€РёР±РєР° РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё СЃРєСЂРёРїС‚Р°");
                     }
                 } else {
                     consoleCaller.call(text);
@@ -77,7 +77,7 @@ public class ExecuteScript implements Command {
 
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Введено неверное имя файла или необходимый файл отсутствует");
+            System.out.println("Р’РІРµРґРµРЅРѕ РЅРµРІРµСЂРЅРѕРµ РёРјСЏ С„Р°Р№Р»Р° РёР»Рё РЅРµРѕР±С…РѕРґРёРјС‹Р№ С„Р°Р№Р» РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚");
         }
     }
 
@@ -92,14 +92,14 @@ public class ExecuteScript implements Command {
         try{
             coordinates.setX(Double.parseDouble(text));
         } catch (NumberFormatException e) {
-            System.out.println("Ошибка при выполнении скрипта");
+            System.out.println("РћС€РёР±РєР° РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё СЃРєСЂРёРїС‚Р°");
             return false;
         }
         text = scanner.nextLine().trim();
         try{
             coordinates.setY(Long.parseLong(text));
         } catch (NumberFormatException e) {
-            System.out.println("Ошибка при выполнении скрипта");
+            System.out.println("РћС€РёР±РєР° РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё СЃРєСЂРёРїС‚Р°");
             return false;
         }
         movie.setCoordinates(coordinates);
@@ -107,21 +107,21 @@ public class ExecuteScript implements Command {
         try {
             movie.setGenre(MovieGenre.valueOf(text));
         } catch (IllegalArgumentException e) {
-            System.out.println("Ошибка при выполнении скрипта");
+            System.out.println("РћС€РёР±РєР° РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё СЃРєСЂРёРїС‚Р°");
             return false;
         }
         text = scanner.nextLine().trim();
         try {
             movie.setOscarsCount(Integer.parseInt(text));
         } catch (NumberFormatException e) {
-            System.out.println("Ошибка при выполнении скрипта");
+            System.out.println("РћС€РёР±РєР° РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё СЃРєСЂРёРїС‚Р°");
             return false;
         }
         text = scanner.nextLine().trim();
         try {
             movie.setMpaaRating(MpaaRating.valueOf(text));
         } catch (IllegalArgumentException e) {
-            System.out.println("Ошибка при выполнении скрипта");
+            System.out.println("РћС€РёР±РєР° РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё СЃРєСЂРёРїС‚Р°");
             return false;
         }
         Person person = new Person();
@@ -129,31 +129,31 @@ public class ExecuteScript implements Command {
         try {
             person.setName(text);
         } catch (Exception e) {
-            System.out.println("Ошибка при выполнении скрипта");
+            System.out.println("РћС€РёР±РєР° РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё СЃРєСЂРёРїС‚Р°");
             return false;
         }
         text = scanner.nextLine().trim();
         try {
             String[] content = text.split("\\.");
             if (content.length != 3) {
-                System.out.println("Ошибка при выполнении скрипта");
+                System.out.println("РћС€РёР±РєР° РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё СЃРєСЂРёРїС‚Р°");
                 return false;
             }
             ZonedDateTime date = ZonedDateTime.of(Integer.parseInt(content[2]), Integer.parseInt(content[1]), Integer.parseInt(content[0]), 0, 0, 0, 0, ZoneId.of("Europe/Moscow"));
             if (date.isAfter(ZonedDateTime.now())) {
-                System.out.println("Ошибка при выполнении скрипта");
+                System.out.println("РћС€РёР±РєР° РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё СЃРєСЂРёРїС‚Р°");
                 return false;
             }
             person.setBirthday(date);
         } catch (Exception e) {
-            System.out.println("Ошибка при выполнении скрипта");
+            System.out.println("РћС€РёР±РєР° РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё СЃРєСЂРёРїС‚Р°");
             return false;
         }
         text = scanner.nextLine().trim();
         try {
             person.setPassportID(text);
         } catch (Exception e){
-            System.out.println("Ошибка при выполнении скрипта");
+            System.out.println("РћС€РёР±РєР° РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё СЃРєСЂРёРїС‚Р°");
             return false;
         }
         movie.setOperator(person);
@@ -170,12 +170,12 @@ public class ExecuteScript implements Command {
     }
 
     /**
-     * Возвращает описание команды.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕРїРёСЃР°РЅРёРµ РєРѕРјР°РЅРґС‹.
      *
-     * @return строка с описанием команды
+     * @return СЃС‚СЂРѕРєР° СЃ РѕРїРёСЃР°РЅРёРµРј РєРѕРјР°РЅРґС‹
      */
     @Override
     public String getDescription() {
-        return "считать и исполнить скрипт из указанного файла. В скрипте содержатся команды в таком же виде, в котором их вводит пользователь в интерактивном режиме";
+        return "СЃС‡РёС‚Р°С‚СЊ Рё РёСЃРїРѕР»РЅРёС‚СЊ СЃРєСЂРёРїС‚ РёР· СѓРєР°Р·Р°РЅРЅРѕРіРѕ С„Р°Р№Р»Р°. Р’ СЃРєСЂРёРїС‚Рµ СЃРѕРґРµСЂР¶Р°С‚СЃСЏ РєРѕРјР°РЅРґС‹ РІ С‚Р°РєРѕРј Р¶Рµ РІРёРґРµ, РІ РєРѕС‚РѕСЂРѕРј РёС… РІРІРѕРґРёС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РІ РёРЅС‚РµСЂР°РєС‚РёРІРЅРѕРј СЂРµР¶РёРјРµ";
     }
 }

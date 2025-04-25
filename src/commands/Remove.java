@@ -4,37 +4,37 @@ import app.App;
 import app.CollectionManager;
 
 /**
- * Класс команды Remove, предназначенный для удаления элемента из коллекции по его ID.
+ * РљР»Р°СЃСЃ РєРѕРјР°РЅРґС‹ Remove, РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅРЅС‹Р№ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РёР· РєРѕР»Р»РµРєС†РёРё РїРѕ РµРіРѕ ID.
  */
 public class Remove implements Command {
 
     /**
-     * Выполняет команду удаления элемента из коллекции по указанному ID.
+     * Р’С‹РїРѕР»РЅСЏРµС‚ РєРѕРјР°РЅРґСѓ СѓРґР°Р»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РёР· РєРѕР»Р»РµРєС†РёРё РїРѕ СѓРєР°Р·Р°РЅРЅРѕРјСѓ ID.
      *
-     * @param argument строка, содержащая ID элемента для удаления
+     * @param argument СЃС‚СЂРѕРєР°, СЃРѕРґРµСЂР¶Р°С‰Р°СЏ ID СЌР»РµРјРµРЅС‚Р° РґР»СЏ СѓРґР°Р»РµРЅРёСЏ
      */
     @Override
     public void execute(String argument) {
         try {
             CollectionManager collectionManager = App.getApp().getCollectionManager();
             if (collectionManager.findMovieById(Long.parseLong(argument)) == null) {
-                System.out.println("В коллекции не содержится элемента с таким индексом");
+                System.out.println("Р’ РєРѕР»Р»РµРєС†РёРё РЅРµ СЃРѕРґРµСЂР¶РёС‚СЃСЏ СЌР»РµРјРµРЅС‚Р° СЃ С‚Р°РєРёРј РёРЅРґРµРєСЃРѕРј");
             } else {
                 collectionManager.removeElement(collectionManager.findMovieById(Long.parseLong(argument)));
-                System.out.println("Элемент успешно удалён из коллекции");
+                System.out.println("Р­Р»РµРјРµРЅС‚ СѓСЃРїРµС€РЅРѕ СѓРґР°Р»С‘РЅ РёР· РєРѕР»Р»РµРєС†РёРё");
             }
         } catch (NumberFormatException e) {
-            System.out.println("Введён неверный аргумент команды");
+            System.out.println("Р’РІРµРґС‘РЅ РЅРµРІРµСЂРЅС‹Р№ Р°СЂРіСѓРјРµРЅС‚ РєРѕРјР°РЅРґС‹");
         }
     }
 
     /**
-     * Возвращает описание команды.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕРїРёСЃР°РЅРёРµ РєРѕРјР°РЅРґС‹.
      *
-     * @return строка с описанием команды
+     * @return СЃС‚СЂРѕРєР° СЃ РѕРїРёСЃР°РЅРёРµРј РєРѕРјР°РЅРґС‹
      */
     @Override
     public String getDescription() {
-        return "удалить элемент из коллекции по его id";
+        return "СѓРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚ РёР· РєРѕР»Р»РµРєС†РёРё РїРѕ РµРіРѕ id";
     }
 }
