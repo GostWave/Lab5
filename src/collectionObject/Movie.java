@@ -15,6 +15,7 @@ import java.time.format.DateTimeFormatter;
  * Класс, представляющий фильм.
  * Нелбходим для хранения информации о фильме, такой как название, координаты, жанр, рейтинг, количество Оскаров и т. д.
  */
+// Lombok
 @XmlRootElement()
 @XmlType(propOrder = {"name", "coordinates", "genre", "mpaaRating", "oscarsCount", "operator", "creationDate"})
 public class Movie implements Comparable<Movie> {

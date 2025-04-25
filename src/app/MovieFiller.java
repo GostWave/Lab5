@@ -9,17 +9,17 @@ import java.time.ZonedDateTime;
 import java.util.Scanner;
 
 /**
- * Класс, заполняющий объект {@link Movie} данными, введёнными пользователем.
+ * РљР»Р°СЃСЃ, Р·Р°РїРѕР»РЅСЏСЋС‰РёР№ РѕР±СЉРµРєС‚ {@link Movie} РґР°РЅРЅС‹РјРё, РІРІРµРґС‘РЅРЅС‹РјРё РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј.
  */
 public class MovieFiller {
     private final Scanner scanner = new Scanner(System.in);
     private String text;
 
     /**
-     * Заполняет объект {@link Movie} данными и возвращает его.
+     * Р—Р°РїРѕР»РЅСЏРµС‚ РѕР±СЉРµРєС‚ {@link Movie} РґР°РЅРЅС‹РјРё Рё РІРѕР·РІСЂР°С‰Р°РµС‚ РµРіРѕ.
      *
-     * @param movie объект фильма, который нужно заполнить
-     * @return заполненный объект {@link Movie}
+     * @param movie РѕР±СЉРµРєС‚ С„РёР»СЊРјР°, РєРѕС‚РѕСЂС‹Р№ РЅСѓР¶РЅРѕ Р·Р°РїРѕР»РЅРёС‚СЊ
+     * @return Р·Р°РїРѕР»РЅРµРЅРЅС‹Р№ РѕР±СЉРµРєС‚ {@link Movie}
      */
     public Movie fill(Movie movie) {
         movie.setCreationDate(LocalDate.now());
@@ -34,30 +34,30 @@ public class MovieFiller {
     }
 
     /**
-     * Запрашивает у пользователя название фильма.
+     * Р—Р°РїСЂР°С€РёРІР°РµС‚ Сѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РЅР°Р·РІР°РЅРёРµ С„РёР»СЊРјР°.
      *
-     * @param movie объект фильма, в который будет установлено название
+     * @param movie РѕР±СЉРµРєС‚ С„РёР»СЊРјР°, РІ РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ СѓСЃС‚Р°РЅРѕРІР»РµРЅРѕ РЅР°Р·РІР°РЅРёРµ
      */
     public void fillName(Movie movie) {
-        System.out.println("Введите название фильма:");
+        System.out.println("Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ С„РёР»СЊРјР°:");
         while (true) {
             text = scanner.nextLine();
             if (text != null && !text.trim().isEmpty()) {
                 movie.setName(text);
                 break;
             } else {
-                System.out.println("Неверный формат ввода, попробуйте ещё раз:");
+                System.out.println("РќРµРІРµСЂРЅС‹Р№ С„РѕСЂРјР°С‚ РІРІРѕРґР°, РїРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р·:");
             }
         }
     }
 
     /**
-     * Запрашивает у пользователя жанр фильма и устанавливает его.
+     * Р—Р°РїСЂР°С€РёРІР°РµС‚ Сѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ Р¶Р°РЅСЂ С„РёР»СЊРјР° Рё СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РµРіРѕ.
      *
-     * @param movie объект фильма, в который будет установлен жанр
+     * @param movie РѕР±СЉРµРєС‚ С„РёР»СЊРјР°, РІ РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ СѓСЃС‚Р°РЅРѕРІР»РµРЅ Р¶Р°РЅСЂ
      */
     public void fillGenre(Movie movie) {
-        System.out.println("Выберите жанр фильма из следующих вариантов:\n" +
+        System.out.println("Р’С‹Р±РµСЂРёС‚Рµ Р¶Р°РЅСЂ С„РёР»СЊРјР° РёР· СЃР»РµРґСѓСЋС‰РёС… РІР°СЂРёР°РЅС‚РѕРІ:\n" +
                 MovieGenre.ACTION + "\n" +
                 MovieGenre.WESTERN + "\n" +
                 MovieGenre.MUSICAL + "\n" +
@@ -69,36 +69,36 @@ public class MovieFiller {
                 movie.setGenre(MovieGenre.valueOf(text));
                 break;
             } catch (IllegalArgumentException e) {
-                System.out.println("Неверное значение. Попробуйте ещё раз.");
+                System.out.println("РќРµРІРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р·.");
             }
         }
     }
 
     /**
-     * Запрашивает у пользователя координаты и устанавливает их.
+     * Р—Р°РїСЂР°С€РёРІР°РµС‚ Сѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РєРѕРѕСЂРґРёРЅР°С‚С‹ Рё СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РёС….
      *
-     * @param movie       объект фильма, в который будут установлены координаты
-     * @param coordinates объект координат
+     * @param movie       РѕР±СЉРµРєС‚ С„РёР»СЊРјР°, РІ РєРѕС‚РѕСЂС‹Р№ Р±СѓРґСѓС‚ СѓСЃС‚Р°РЅРѕРІР»РµРЅС‹ РєРѕРѕСЂРґРёРЅР°С‚С‹
+     * @param coordinates РѕР±СЉРµРєС‚ РєРѕРѕСЂРґРёРЅР°С‚
      */
     public void fillCoordinates(Movie movie, Coordinates coordinates) {
-        System.out.println("Введите значение координаты X:");
+        System.out.println("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ РєРѕРѕСЂРґРёРЅР°С‚С‹ X:");
         double doubleValue;
         while (true) {
             doubleValue = fillDouble();
             if (doubleValue > 160) {
-                System.out.println("Значение должно быть не больше 160. Попробуйте ещё раз.");
+                System.out.println("Р—РЅР°С‡РµРЅРёРµ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РЅРµ Р±РѕР»СЊС€Рµ 160. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р·.");
             } else {
                 break;
             }
         }
         coordinates.setX(doubleValue);
 
-        System.out.println("Введите значение координаты Y:");
+        System.out.println("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ РєРѕРѕСЂРґРёРЅР°С‚С‹ Y:");
         Long longValue;
         while (true) {
             longValue = fillLong();
             if (longValue > 170) {
-                System.out.println("Значение должно быть не больше 170. Попробуйте ещё раз.");
+                System.out.println("Р—РЅР°С‡РµРЅРёРµ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РЅРµ Р±РѕР»СЊС€Рµ 170. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р·.");
             } else {
                 break;
             }
@@ -108,23 +108,23 @@ public class MovieFiller {
     }
 
     /**
-     * Запрашивает у пользователя количество премий Оскара и устанавливает его.
+     * Р—Р°РїСЂР°С€РёРІР°РµС‚ Сѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРµРјРёР№ РћСЃРєР°СЂР° Рё СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РµРіРѕ.
      *
-     * @param movie объект фильма, в который будет установлено количество Оскаров
+     * @param movie РѕР±СЉРµРєС‚ С„РёР»СЊРјР°, РІ РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ СѓСЃС‚Р°РЅРѕРІР»РµРЅРѕ РєРѕР»РёС‡РµСЃС‚РІРѕ РћСЃРєР°СЂРѕРІ
      */
     public void fillOscarsCount(Movie movie) {
-        System.out.println("Введите количество премий Оскара:");
+        System.out.println("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРµРјРёР№ РћСЃРєР°СЂР°:");
         int intValue = fillInt();
         movie.setOscarsCount(intValue);
     }
 
     /**
-     * Запрашивает у пользователя рейтинг MPAA и устанавливает его.
+     * Р—Р°РїСЂР°С€РёРІР°РµС‚ Сѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ СЂРµР№С‚РёРЅРі MPAA Рё СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РµРіРѕ.
      *
-     * @param movie объект фильма, в который будет установлен MPAA рейтинг
+     * @param movie РѕР±СЉРµРєС‚ С„РёР»СЊРјР°, РІ РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ СѓСЃС‚Р°РЅРѕРІР»РµРЅ MPAA СЂРµР№С‚РёРЅРі
      */
     public void fillMpaaRating(Movie movie) {
-        System.out.println("Выберите значение MPAA Rating из следующих вариантов:\n" +
+        System.out.println("Р’С‹Р±РµСЂРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ MPAA Rating РёР· СЃР»РµРґСѓСЋС‰РёС… РІР°СЂРёР°РЅС‚РѕРІ:\n" +
                 MpaaRating.G + "\n" +
                 MpaaRating.PG + "\n" +
                 MpaaRating.PG_13 + "\n" +
@@ -136,67 +136,67 @@ public class MovieFiller {
                 movie.setMpaaRating(MpaaRating.valueOf(text));
                 break;
             } catch (IllegalArgumentException e) {
-                System.out.println("Неверное значение. Попробуйте ещё раз.");
+                System.out.println("РќРµРІРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р·.");
             }
         }
     }
 
     /**
-     * Запрашивает у пользователя данные о режиссёре фильма и устанавливает их.
+     * Р—Р°РїСЂР°С€РёРІР°РµС‚ Сѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РґР°РЅРЅС‹Рµ Рѕ СЂРµР¶РёСЃСЃС‘СЂРµ С„РёР»СЊРјР° Рё СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РёС….
      *
-     * @param movie объект фильма, в который будут установлены данные о режиссёре
-     * @throws DateTimeException если введена некорректная дата
+     * @param movie РѕР±СЉРµРєС‚ С„РёР»СЊРјР°, РІ РєРѕС‚РѕСЂС‹Р№ Р±СѓРґСѓС‚ СѓСЃС‚Р°РЅРѕРІР»РµРЅС‹ РґР°РЅРЅС‹Рµ Рѕ СЂРµР¶РёСЃСЃС‘СЂРµ
+     * @throws DateTimeException РµСЃР»Рё РІРІРµРґРµРЅР° РЅРµРєРѕСЂСЂРµРєС‚РЅР°СЏ РґР°С‚Р°
      */
     public void fillPerson(Movie movie) throws DateTimeException {
         Person person = new Person();
-        System.out.println("Введите имя режиссёра:");
+        System.out.println("Р’РІРµРґРёС‚Рµ РёРјСЏ СЂРµР¶РёСЃСЃС‘СЂР°:");
         while (true) {
             text = scanner.nextLine();
             if (isOnlyLetters(text)) {
                 person.setName(text.trim());
                 break;
             } else {
-                System.out.println("Неверный формат ввода: строка должна содержать только буквы. Попробуйте ещё раз.");
+                System.out.println("РќРµРІРµСЂРЅС‹Р№ С„РѕСЂРјР°С‚ РІРІРѕРґР°: СЃС‚СЂРѕРєР° РґРѕР»Р¶РЅР° СЃРѕРґРµСЂР¶Р°С‚СЊ С‚РѕР»СЊРєРѕ Р±СѓРєРІС‹. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р·.");
             }
         }
 
-        System.out.println("Введите дату рождения режиссёра в формате dd.MM.yyyy:");
+        System.out.println("Р’РІРµРґРёС‚Рµ РґР°С‚Сѓ СЂРѕР¶РґРµРЅРёСЏ СЂРµР¶РёСЃСЃС‘СЂР° РІ С„РѕСЂРјР°С‚Рµ dd.MM.yyyy:");
         while (true) {
             try {
                 String text = scanner.nextLine();
                 String[] content = text.split("\\.");
                 if (content.length != 3) {
-                    throw new IllegalArgumentException("Ошибка: формат должен быть dd.MM.yyyy.");
+                    throw new IllegalArgumentException("РћС€РёР±РєР°: С„РѕСЂРјР°С‚ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ dd.MM.yyyy.");
                 }
                 ZonedDateTime date = ZonedDateTime.of(Integer.parseInt(content[2]), Integer.parseInt(content[1]), Integer.parseInt(content[0]), 0, 0, 0, 0, ZoneId.of("Europe/Moscow"));
                 if (date.isAfter(ZonedDateTime.now())) {
-                    throw new DateTimeException("Ошибка: дата не может быть в будущем.");
+                    throw new DateTimeException("РћС€РёР±РєР°: РґР°С‚Р° РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РІ Р±СѓРґСѓС‰РµРј.");
                 }
                 person.setBirthday(date);
                 movie.setOperator(person);
                 break;
             } catch (NumberFormatException e) {
-                System.out.println("Ошибка: дата должна содержать только числа. Попробуйте ещё раз.");
+                System.out.println("РћС€РёР±РєР°: РґР°С‚Р° РґРѕР»Р¶РЅР° СЃРѕРґРµСЂР¶Р°С‚СЊ С‚РѕР»СЊРєРѕ С‡РёСЃР»Р°. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р·.");
             } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException e) {
-                System.out.println("Ошибка: некорректный формат даты. Используйте dd.MM.yyyy. Попробуйте ещё раз.");
+                System.out.println("РћС€РёР±РєР°: РЅРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ С„РѕСЂРјР°С‚ РґР°С‚С‹. РСЃРїРѕР»СЊР·СѓР№С‚Рµ dd.MM.yyyy. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р·.");
             } catch (DateTimeException e) {
-                System.out.println("Ошибка: дата рождения не может быть позже текущей даты. Попробуйте ещё раз.");
+                System.out.println("РћС€РёР±РєР°: РґР°С‚Р° СЂРѕР¶РґРµРЅРёСЏ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїРѕР·Р¶Рµ С‚РµРєСѓС‰РµР№ РґР°С‚С‹. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р·.");
             }
         }
-        System.out.println("Введите номер паспорта режиссёра");
+        System.out.println("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РїР°СЃРїРѕСЂС‚Р° СЂРµР¶РёСЃСЃС‘СЂР°");
         while (true) {
             text = scanner.nextLine();
             if (text != null && text.length() >= 6 ) {
                 person.setPassportID(text);
                 break;
             } else {
-                System.out.println("Неверный формат ввода: строка должна быть длиной не менее 6 символов. Попробуйте ещё раз");
+                System.out.println("РќРµРІРµСЂРЅС‹Р№ С„РѕСЂРјР°С‚ РІРІРѕРґР°: СЃС‚СЂРѕРєР° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РґР»РёРЅРѕР№ РЅРµ РјРµРЅРµРµ 6 СЃРёРјРІРѕР»РѕРІ. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р·");
             }
         }
     }
 
     /**
-     * @return введённое пользователем число типа double
+     * @return РІРІРµРґС‘РЅРЅРѕРµ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј С‡РёСЃР»Рѕ С‚РёРїР° double
      */
     public double fillDouble() {
         while (true) {
@@ -204,13 +204,13 @@ public class MovieFiller {
                 text = scanner.nextLine().replace(",", ".");
                 return Double.parseDouble(text);
             } catch (NumberFormatException e) {
-                System.out.println("Нужно вводить число.");
+                System.out.println("РќСѓР¶РЅРѕ РІРІРѕРґРёС‚СЊ С‡РёСЃР»Рѕ.");
             }
         }
     }
 
     /**
-     * @return введённое пользователем число типа Long
+     * @return РІРІРµРґС‘РЅРЅРѕРµ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј С‡РёСЃР»Рѕ С‚РёРїР° Long
      */
     public Long fillLong() {
         while (true) {
@@ -218,12 +218,12 @@ public class MovieFiller {
                 text = scanner.nextLine();
                 return Long.parseLong(text);
             } catch (NumberFormatException e) {
-                System.out.println("Нужно вводить число типа Long.");
+                System.out.println("РќСѓР¶РЅРѕ РІРІРѕРґРёС‚СЊ С‡РёСЃР»Рѕ С‚РёРїР° Long.");
             }
         }
     }
 
-    /** @return введённое пользователем число типа int */
+    /** @return РІРІРµРґС‘РЅРЅРѕРµ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј С‡РёСЃР»Рѕ С‚РёРїР° int */
     public int fillInt() {
         while (true) {
             try {
@@ -232,15 +232,15 @@ public class MovieFiller {
                 if (value > 0) {
                     return value;
                 } else {
-                    System.out.println("Число должно быть больше 0. Попробуйте снова.");
+                    System.out.println("Р§РёСЃР»Рѕ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ 0. РџРѕРїСЂРѕР±СѓР№С‚Рµ СЃРЅРѕРІР°.");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Нужно вводить число типа int и больше 0.");
+                System.out.println("РќСѓР¶РЅРѕ РІРІРѕРґРёС‚СЊ С‡РёСЃР»Рѕ С‚РёРїР° int Рё Р±РѕР»СЊС€Рµ 0.");
             }
         }
     }
 
-    /** @return {@code true}, если строка содержит только буквы */
+    /** @return {@code true}, РµСЃР»Рё СЃС‚СЂРѕРєР° СЃРѕРґРµСЂР¶РёС‚ С‚РѕР»СЊРєРѕ Р±СѓРєРІС‹ */
     public static boolean isOnlyLetters(String text) {
         if (text.isEmpty()) return false;
         for (char ch : text.toCharArray()) {

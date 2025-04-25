@@ -10,12 +10,12 @@ public interface Command {
      *
      * @param argument аргумент команды
      */
-    public abstract void execute(String argument);
+    void execute(String argument);
 
     /**
      * Возвращает описание команды.
      *
      * @return строка с описанием команды
      */
-    public abstract String getDescription();
+    String getDescription();
 }
