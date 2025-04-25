@@ -13,42 +13,42 @@ import java.util.Scanner;
 
 
 /**
- * Класс FileManager предназначен для управления загрузкой и сохранением коллекции в файл.
+ * РљР»Р°СЃСЃ FileManager РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅ РґР»СЏ СѓРїСЂР°РІР»РµРЅРёСЏ Р·Р°РіСЂСѓР·РєРѕР№ Рё СЃРѕС…СЂР°РЅРµРЅРёРµРј РєРѕР»Р»РµРєС†РёРё РІ С„Р°Р№Р».
  */
 public class FileManager {
 
     /**
-     * Название файла, получаемое из переменной окружения COLLECTION_FILE.
+     * РќР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°, РїРѕР»СѓС‡Р°РµРјРѕРµ РёР· РїРµСЂРµРјРµРЅРЅРѕР№ РѕРєСЂСѓР¶РµРЅРёСЏ COLLECTION_FILE.
      */
     private final String fileName = System.getenv("COLLECTION_FILE");
 
     /**
-     * Менеджеры коллекции и команд .
+     * РњРµРЅРµРґР¶РµСЂС‹ РєРѕР»Р»РµРєС†РёРё Рё РєРѕРјР°РЅРґ .
      */
     private final CollectionManager collectionManager = App.getApp().getCollectionManager();
     private final CommandManager commandManager = App.getApp().getCommandManager();
     private final ConsoleCaller consoleCaller = App.getApp().getConsoleCaller();
     /**
-     * Строковое представление данных файла.
+     * РЎС‚СЂРѕРєРѕРІРѕРµ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ РґР°РЅРЅС‹С… С„Р°Р№Р»Р°.
      */
     private String text;
 
     /**
-     * Считывает коллекцию из файла.
+     * РЎС‡РёС‚С‹РІР°РµС‚ РєРѕР»Р»РµРєС†РёСЋ РёР· С„Р°Р№Р»Р°.
      */
     public void importCollection() {
         File file = null;
         try {
             file = new File(fileName);
         } catch (NullPointerException e) {
-            System.out.println("Не передано имя файла. Программа будет завершена");
+            System.out.println("РќРµ РїРµСЂРµРґР°РЅРѕ РёРјСЏ С„Р°Р№Р»Р°. РџСЂРѕРіСЂР°РјРјР° Р±СѓРґРµС‚ Р·Р°РІРµСЂС€РµРЅР°");
             System.exit(0);
         }
 
         if (file != null) {
             if (file.exists()) {
                 if (!file.canRead()){
-                    System.out.println("Ошибка: Нет прав доступа к файлу. Программа будет завершена");
+                    System.out.println("РћС€РёР±РєР°: РќРµС‚ РїСЂР°РІ РґРѕСЃС‚СѓРїР° Рє С„Р°Р№Р»Сѓ. РџСЂРѕРіСЂР°РјРјР° Р±СѓРґРµС‚ Р·Р°РІРµСЂС€РµРЅР°");
                     System.exit(0);
                 } else {
                     fileReader(file);
@@ -58,7 +58,7 @@ public class FileManager {
                 try {
                     file.createNewFile();
                 } catch (IOException e) {
-                    System.out.println("Неверное имя файла. Программа будет завершена");
+                    System.out.println("РќРµРІРµСЂРЅРѕРµ РёРјСЏ С„Р°Р№Р»Р°. РџСЂРѕРіСЂР°РјРјР° Р±СѓРґРµС‚ Р·Р°РІРµСЂС€РµРЅР°");
                     System.exit(0);
                 }
             }
@@ -68,9 +68,9 @@ public class FileManager {
 
 
     /**
-     * Читает данные из файла и сохраняет их в переменной text.
+     * Р§РёС‚Р°РµС‚ РґР°РЅРЅС‹Рµ РёР· С„Р°Р№Р»Р° Рё СЃРѕС…СЂР°РЅСЏРµС‚ РёС… РІ РїРµСЂРµРјРµРЅРЅРѕР№ text.
      *
-     * @param file файл, из которого считываются данные
+     * @param file С„Р°Р№Р», РёР· РєРѕС‚РѕСЂРѕРіРѕ СЃС‡РёС‚С‹РІР°СЋС‚СЃСЏ РґР°РЅРЅС‹Рµ
      */
     public void fileReader(File file) {
         try {
@@ -80,13 +80,13 @@ public class FileManager {
                 text = scanner.next();
             }
         } catch (FileNotFoundException e){
-                System.out.println("Ошибка: отсутствует файл");
+                System.out.println("РћС€РёР±РєР°: РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ С„Р°Р№Р»");
             }
         }
 
 
     /**
-     * Преобразует текстовые данные в объект коллекции и загружает их в менеджер коллекции.
+     * РџСЂРµРѕР±СЂР°Р·СѓРµС‚ С‚РµРєСЃС‚РѕРІС‹Рµ РґР°РЅРЅС‹Рµ РІ РѕР±СЉРµРєС‚ РєРѕР»Р»РµРєС†РёРё Рё Р·Р°РіСЂСѓР¶Р°РµС‚ РёС… РІ РјРµРЅРµРґР¶РµСЂ РєРѕР»Р»РµРєС†РёРё.
      */
     public void textToObject() {
         if (text != null) {
@@ -97,7 +97,7 @@ public class FileManager {
                 CollectionChecker collectionChecker = new CollectionChecker(movies);
                 if (collectionChecker.checkCollection()) {
                     collectionManager.setCollection(movies);
-                    System.out.println("Коллекция успешно импортирована из файла");
+                    System.out.println("РљРѕР»Р»РµРєС†РёСЏ СѓСЃРїРµС€РЅРѕ РёРјРїРѕСЂС‚РёСЂРѕРІР°РЅР° РёР· С„Р°Р№Р»Р°");
                 }
 
             }
@@ -105,7 +105,7 @@ public class FileManager {
     }
 
     /**
-     * Записывает текущую коллекцию в файл.
+     * Р—Р°РїРёСЃС‹РІР°РµС‚ С‚РµРєСѓС‰СѓСЋ РєРѕР»Р»РµРєС†РёСЋ РІ С„Р°Р№Р».
      */
     public void fileWriter() {
         JAXBWorker jaxbWorker = new JAXBWorker();
@@ -118,18 +118,18 @@ public class FileManager {
             if (file.exists()) {
                 try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(fileName), "UTF-8")) {
                     writer.write("");
-                    System.out.println("Коллекция пуста, файл очищен");
+                    System.out.println("РљРѕР»Р»РµРєС†РёСЏ РїСѓСЃС‚Р°, С„Р°Р№Р» РѕС‡РёС‰РµРЅ");
                 } catch (IOException e) {
-                    System.out.println("Не удалось очистить файл");
+                    System.out.println("РќРµ СѓРґР°Р»РѕСЃСЊ РѕС‡РёСЃС‚РёС‚СЊ С„Р°Р№Р»");
                 }
             } else {
-                System.out.println("Коллекция пуста");
+                System.out.println("РљРѕР»Р»РµРєС†РёСЏ РїСѓСЃС‚Р°");
             }
         } else {
             try {
                 jaxbWorker.convertObjectToXml(movies);
             } catch (JAXBException e) {
-                System.out.println("Не удалось записать коллекцию в файл");
+                System.out.println("РќРµ СѓРґР°Р»РѕСЃСЊ Р·Р°РїРёСЃР°С‚СЊ РєРѕР»Р»РµРєС†РёСЋ РІ С„Р°Р№Р»");
             }
         }
     }

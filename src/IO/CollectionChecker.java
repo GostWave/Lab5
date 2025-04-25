@@ -29,7 +29,7 @@ public class CollectionChecker {
     }
     public boolean checkName(Movie movie){
         if (movie.getName()==null | movie.getName().isEmpty()){
-            System.out.println("Название фильма не может быть пустым");
+            System.out.println("РќР°Р·РІР°РЅРёРµ С„РёР»СЊРјР° РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСѓСЃС‚С‹Рј");
             return false;
         } else {
             return true;
@@ -39,19 +39,19 @@ public class CollectionChecker {
     public boolean checkCoordinates(Movie movie){
         Coordinates coordinates=movie.getCoordinates();
         if (coordinates==null){
-            System.out.println("Координаты фильма не могут быть пустыми");
+            System.out.println("РљРѕРѕСЂРґРёРЅР°С‚С‹ С„РёР»СЊРјР° РЅРµ РјРѕРіСѓС‚ Р±С‹С‚СЊ РїСѓСЃС‚С‹РјРё");
             return false;
         } else if (coordinates.getY() == null){
-            System.out.println("Координата Y фильма записана неверно: она должна быть числом типа Long");
+            System.out.println("РљРѕРѕСЂРґРёРЅР°С‚Р° Y С„РёР»СЊРјР° Р·Р°РїРёСЃР°РЅР° РЅРµРІРµСЂРЅРѕ: РѕРЅР° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ С‡РёСЃР»РѕРј С‚РёРїР° Long");
             return false;
         } else if (coordinates.getX() == null) {
-            System.out.println("Координата X фильма записана неверно: она должна быть числом типа double");
+            System.out.println("РљРѕРѕСЂРґРёРЅР°С‚Р° X С„РёР»СЊРјР° Р·Р°РїРёСЃР°РЅР° РЅРµРІРµСЂРЅРѕ: РѕРЅР° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ С‡РёСЃР»РѕРј С‚РёРїР° double");
             return false;
         } else if (coordinates.getX()>160){
-            System.out.println("Координата X фильма не может быть больше 160");
+            System.out.println("РљРѕРѕСЂРґРёРЅР°С‚Р° X С„РёР»СЊРјР° РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ 160");
             return false;
         } else if (coordinates.getY()>170){
-            System.out.println("Координата Y фильма не может быть больше 170");
+            System.out.println("РљРѕРѕСЂРґРёРЅР°С‚Р° Y С„РёР»СЊРјР° РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ 170");
             return false;
         } else {
             return true;
@@ -63,14 +63,14 @@ public class CollectionChecker {
             Double.parseDouble(String.valueOf(movie.getCoordinates().getX()));
             return true;
         } catch (NumberFormatException e){
-            System.out.println("Координата X должна быть числом");
+            System.out.println("РљРѕРѕСЂРґРёРЅР°С‚Р° X РґРѕР»Р¶РЅР° Р±С‹С‚СЊ С‡РёСЃР»РѕРј");
             return false;
         }
     }
 
     public boolean checkId(Movie movie){
         if (movie.getId()==null){
-            System.out.println("Id фильма не может быть пустым");
+            System.out.println("Id С„РёР»СЊРјР° РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСѓСЃС‚С‹Рј");
             return false;
         } else {
             return true;
@@ -79,7 +79,7 @@ public class CollectionChecker {
 
     public boolean checkCreationDate(Movie movie) {
         if (movie.getCreationDate() == null) {
-            System.out.println("Дата создания фильма должна быть в формате yyyy-MM-dd (например, 2020-12-30)");
+            System.out.println("Р”Р°С‚Р° СЃРѕР·РґР°РЅРёСЏ С„РёР»СЊРјР° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РІ С„РѕСЂРјР°С‚Рµ yyyy-MM-dd (РЅР°РїСЂРёРјРµСЂ, 2020-12-30)");
             return false;
         } else {
             return true;
@@ -87,7 +87,7 @@ public class CollectionChecker {
     }
     public boolean checkOscarsCount(Movie movie){
         if (movie.getOscarsCount()<=0){
-            System.out.println("Количество оскаров должно быть больше 0");
+            System.out.println("РљРѕР»РёС‡РµСЃС‚РІРѕ РѕСЃРєР°СЂРѕРІ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ 0");
             return false;
         } else {
             return true;
@@ -95,7 +95,7 @@ public class CollectionChecker {
     }
     public boolean checkGenre(Movie movie){
         if (movie.getGenre()==null){
-            System.out.println("Неверно указан жанр фильма");
+            System.out.println("РќРµРІРµСЂРЅРѕ СѓРєР°Р·Р°РЅ Р¶Р°РЅСЂ С„РёР»СЊРјР°");
             return false;
         } else {
             return true;
@@ -103,7 +103,7 @@ public class CollectionChecker {
     }
     public boolean checkMpaaRating(Movie movie){
         if (movie.getMpaaRating()==null){
-            System.out.println("Неверно указан MpaaRating фильма");
+            System.out.println("РќРµРІРµСЂРЅРѕ СѓРєР°Р·Р°РЅ MpaaRating С„РёР»СЊРјР°");
             return false;
         } else {
             return true;
@@ -111,7 +111,7 @@ public class CollectionChecker {
     }
     public boolean checkOperatorName(Movie movie){
         if (movie.getOperator().getName()==null | Objects.equals(movie.getOperator().getName(), "")){
-            System.out.println("Имя режиссёра фильма не может быть пустым");
+            System.out.println("РРјСЏ СЂРµР¶РёСЃСЃС‘СЂР° С„РёР»СЊРјР° РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСѓСЃС‚С‹Рј");
             return false;
         } else {
             return true;
@@ -119,7 +119,7 @@ public class CollectionChecker {
     }
     public boolean checkOperatorBirthday(Movie movie){
         if (movie.getOperator().getBirthday()==null){
-            System.out.println("Дата создания фильма должна быть в формате yyyy-MM-dd (например, 2022-10-30)");
+            System.out.println("Р”Р°С‚Р° СЃРѕР·РґР°РЅРёСЏ С„РёР»СЊРјР° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РІ С„РѕСЂРјР°С‚Рµ yyyy-MM-dd (РЅР°РїСЂРёРјРµСЂ, 2022-10-30)");
             return false;
         } else {
             return true;
@@ -127,10 +127,10 @@ public class CollectionChecker {
     }
     public boolean checkOperatorPassportID(Movie movie){
         if (movie.getOperator().getPassportID()==null | Objects.equals(movie.getOperator().getPassportID(), "")){
-            System.out.println("Номер паспорта режиссёра фильма не может быть пустым");
+            System.out.println("РќРѕРјРµСЂ РїР°СЃРїРѕСЂС‚Р° СЂРµР¶РёСЃСЃС‘СЂР° С„РёР»СЊРјР° РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСѓСЃС‚С‹Рј");
             return false;
         } else if (movie.getOperator().getPassportID().length()<6){
-            System.out.println("Номер паспорта режиссёра фильма должен быть длиной не меньше 6 символов");
+            System.out.println("РќРѕРјРµСЂ РїР°СЃРїРѕСЂС‚Р° СЂРµР¶РёСЃСЃС‘СЂР° С„РёР»СЊРјР° РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РґР»РёРЅРѕР№ РЅРµ РјРµРЅСЊС€Рµ 6 СЃРёРјРІРѕР»РѕРІ");
             return false;
         } else {
             return true;

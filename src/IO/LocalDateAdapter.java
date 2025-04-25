@@ -9,18 +9,18 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.Temporal;
 
 /**
- * Адаптер для преобразования {@link Temporal} объектов (LocalDate и ZonedDateTime)
- * в строковый формат XML и обратно.
+ * РђРґР°РїС‚РµСЂ РґР»СЏ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ {@link Temporal} РѕР±СЉРµРєС‚РѕРІ (LocalDate Рё ZonedDateTime)
+ * РІ СЃС‚СЂРѕРєРѕРІС‹Р№ С„РѕСЂРјР°С‚ XML Рё РѕР±СЂР°С‚РЅРѕ.
  */
 public class LocalDateAdapter extends XmlAdapter<String, Temporal> {
     private static final DateTimeFormatter LOCAL_DATE_FORMATTER = DateTimeFormatter.ISO_LOCAL_DATE;
     private static final DateTimeFormatter ZONED_DATE_TIME_FORMATTER = DateTimeFormatter.ISO_ZONED_DATE_TIME;
 
     /**
-     * Преобразует строковое представление даты в объект {@link Temporal}.
+     * РџСЂРµРѕР±СЂР°Р·СѓРµС‚ СЃС‚СЂРѕРєРѕРІРѕРµ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ РґР°С‚С‹ РІ РѕР±СЉРµРєС‚ {@link Temporal}.
      *
-     * @param v строковое представление даты
-     * @return объект {@link ZonedDateTime}, если строка содержит 'T', иначе {@link LocalDate}
+     * @param v СЃС‚СЂРѕРєРѕРІРѕРµ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ РґР°С‚С‹
+     * @return РѕР±СЉРµРєС‚ {@link ZonedDateTime}, РµСЃР»Рё СЃС‚СЂРѕРєР° СЃРѕРґРµСЂР¶РёС‚ 'T', РёРЅР°С‡Рµ {@link LocalDate}
      */
     @Override
     public Temporal unmarshal(String v) {
@@ -36,10 +36,10 @@ public class LocalDateAdapter extends XmlAdapter<String, Temporal> {
     }
 
     /**
-     * Преобразует объект {@link Temporal} в строковое представление.
+     * РџСЂРµРѕР±СЂР°Р·СѓРµС‚ РѕР±СЉРµРєС‚ {@link Temporal} РІ СЃС‚СЂРѕРєРѕРІРѕРµ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ.
      *
-     * @param v объект {@link Temporal} для преобразования
-     * @return строковое представление даты
+     * @param v РѕР±СЉРµРєС‚ {@link Temporal} РґР»СЏ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ
+     * @return СЃС‚СЂРѕРєРѕРІРѕРµ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ РґР°С‚С‹
      */
     @Override
     public String marshal(Temporal v) {
