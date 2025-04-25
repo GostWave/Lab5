@@ -12,22 +12,22 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Класс, представляющий фильм.
- * Нелбходим для хранения информации о фильме, такой как название, координаты, жанр, рейтинг, количество Оскаров и т. д.
+ * РљР»Р°СЃСЃ, РїСЂРµРґСЃС‚Р°РІР»СЏСЋС‰РёР№ С„РёР»СЊРј.
+ * РќРµР»Р±С…РѕРґРёРј РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё Рѕ С„РёР»СЊРјРµ, С‚Р°РєРѕР№ РєР°Рє РЅР°Р·РІР°РЅРёРµ, РєРѕРѕСЂРґРёРЅР°С‚С‹, Р¶Р°РЅСЂ, СЂРµР№С‚РёРЅРі, РєРѕР»РёС‡РµСЃС‚РІРѕ РћСЃРєР°СЂРѕРІ Рё С‚. Рґ.
  */
 // Lombok
 @XmlRootElement()
 @XmlType(propOrder = {"name", "coordinates", "genre", "mpaaRating", "oscarsCount", "operator", "creationDate"})
 public class Movie implements Comparable<Movie> {
 
-    private Long id; // Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
-    private String name; // Поле не может быть null, Строка не может быть пустой
-    private Coordinates coordinates; // Поле не может быть null
-    private LocalDate creationDate; // Поле не может быть null, Значение этого поля должно быть генерироваться автоматически
-    private int oscarsCount; // Значение поля должно быть больше 0
-    private MovieGenre genre; // Поле может быть null
-    private MpaaRating mpaaRating; // Поле не может быть null
-    private Person operator; // Поле не может быть null
+    private Long id; // РџРѕР»Рµ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ null, Р—РЅР°С‡РµРЅРёРµ РїРѕР»СЏ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ 0, Р—РЅР°С‡РµРЅРёРµ СЌС‚РѕРіРѕ РїРѕР»СЏ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ СѓРЅРёРєР°Р»СЊРЅС‹Рј, Р—РЅР°С‡РµРЅРёРµ СЌС‚РѕРіРѕ РїРѕР»СЏ РґРѕР»Р¶РЅРѕ РіРµРЅРµСЂРёСЂРѕРІР°С‚СЊСЃСЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё
+    private String name; // РџРѕР»Рµ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ null, РЎС‚СЂРѕРєР° РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСѓСЃС‚РѕР№
+    private Coordinates coordinates; // РџРѕР»Рµ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ null
+    private LocalDate creationDate; // РџРѕР»Рµ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ null, Р—РЅР°С‡РµРЅРёРµ СЌС‚РѕРіРѕ РїРѕР»СЏ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РіРµРЅРµСЂРёСЂРѕРІР°С‚СЊСЃСЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё
+    private int oscarsCount; // Р—РЅР°С‡РµРЅРёРµ РїРѕР»СЏ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ 0
+    private MovieGenre genre; // РџРѕР»Рµ РјРѕР¶РµС‚ Р±С‹С‚СЊ null
+    private MpaaRating mpaaRating; // РџРѕР»Рµ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ null
+    private Person operator; // РџРѕР»Рµ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ null
 
 
     @Override
@@ -36,18 +36,18 @@ public class Movie implements Comparable<Movie> {
     }
 
     /**
-     * Устанавливает id фильма.
+     * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ id С„РёР»СЊРјР°.
      *
-     * @param id идентификатор фильма
+     * @param id РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ С„РёР»СЊРјР°
      */
     public void setId(Long id) {
         this.id = id;
     }
 
     /**
-     * Получает id фильма.
+     * РџРѕР»СѓС‡Р°РµС‚ id С„РёР»СЊРјР°.
      *
-     * @return id фильма
+     * @return id С„РёР»СЊРјР°
      */
     @XmlAttribute
     public Long getId() {
@@ -55,18 +55,18 @@ public class Movie implements Comparable<Movie> {
     }
 
     /**
-     * Устанавливает название фильма.
+     * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РЅР°Р·РІР°РЅРёРµ С„РёР»СЊРјР°.
      *
-     * @param name название фильма
+     * @param name РЅР°Р·РІР°РЅРёРµ С„РёР»СЊРјР°
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Получает название фильма.
+     * РџРѕР»СѓС‡Р°РµС‚ РЅР°Р·РІР°РЅРёРµ С„РёР»СЊРјР°.
      *
-     * @return название фильма
+     * @return РЅР°Р·РІР°РЅРёРµ С„РёР»СЊРјР°
      */
     @XmlElement
     public String getName() {
@@ -74,18 +74,18 @@ public class Movie implements Comparable<Movie> {
     }
 
     /**
-     * Устанавливает координаты фильма.
+     * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РєРѕРѕСЂРґРёРЅР°С‚С‹ С„РёР»СЊРјР°.
      *
-     * @param coordinates координаты фильма
+     * @param coordinates РєРѕРѕСЂРґРёРЅР°С‚С‹ С„РёР»СЊРјР°
      */
     public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
 
     /**
-     * Получает координаты фильма.
+     * РџРѕР»СѓС‡Р°РµС‚ РєРѕРѕСЂРґРёРЅР°С‚С‹ С„РёР»СЊРјР°.
      *
-     * @return координаты фильма
+     * @return РєРѕРѕСЂРґРёРЅР°С‚С‹ С„РёР»СЊРјР°
      */
     @XmlElement
     public Coordinates getCoordinates() {
@@ -93,18 +93,18 @@ public class Movie implements Comparable<Movie> {
     }
 
     /**
-     * Устанавливает дату создания фильма.
+     * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РґР°С‚Сѓ СЃРѕР·РґР°РЅРёСЏ С„РёР»СЊРјР°.
      *
-     * @param localDate дата создания фильма
+     * @param localDate РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ С„РёР»СЊРјР°
      */
     public void setCreationDate(LocalDate localDate) {
         this.creationDate = localDate;
     }
 
     /**
-     * Получает дату создания фильма.
+     * РџРѕР»СѓС‡Р°РµС‚ РґР°С‚Сѓ СЃРѕР·РґР°РЅРёСЏ С„РёР»СЊРјР°.
      *
-     * @return дата создания фильма
+     * @return РґР°С‚Р° СЃРѕР·РґР°РЅРёСЏ С„РёР»СЊРјР°
      */
     @XmlElement
     @XmlJavaTypeAdapter(LocalDateAdapter.class)
@@ -113,18 +113,18 @@ public class Movie implements Comparable<Movie> {
     }
 
     /**
-     * Устанавливает количество премий Оскара.
+     * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРµРјРёР№ РћСЃРєР°СЂР°.
      *
-     * @param oscarsCount количество премий Оскара
+     * @param oscarsCount РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРµРјРёР№ РћСЃРєР°СЂР°
      */
     public void setOscarsCount(int oscarsCount) {
         this.oscarsCount = oscarsCount;
     }
 
     /**
-     * Получает количество премий Оскара.
+     * РџРѕР»СѓС‡Р°РµС‚ РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРµРјРёР№ РћСЃРєР°СЂР°.
      *
-     * @return количество премий Оскара
+     * @return РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРµРјРёР№ РћСЃРєР°СЂР°
      */
     @XmlElement
     public int getOscarsCount() {
@@ -132,36 +132,36 @@ public class Movie implements Comparable<Movie> {
     }
 
     /**
-     * Устанавливает жанр фильма.
+     * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ Р¶Р°РЅСЂ С„РёР»СЊРјР°.
      *
-     * @param genre жанр фильма
+     * @param genre Р¶Р°РЅСЂ С„РёР»СЊРјР°
      */
     public void setGenre(MovieGenre genre) {
         this.genre = genre;
     }
 
     /**
-     * Получает жанр фильма.
+     * РџРѕР»СѓС‡Р°РµС‚ Р¶Р°РЅСЂ С„РёР»СЊРјР°.
      *
-     * @return жанр фильма
+     * @return Р¶Р°РЅСЂ С„РёР»СЊРјР°
      */
     public MovieGenre getGenre() {
         return genre;
     }
 
     /**
-     * Устанавливает рейтинг фильма по системе MPAA.
+     * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ СЂРµР№С‚РёРЅРі С„РёР»СЊРјР° РїРѕ СЃРёСЃС‚РµРјРµ MPAA.
      *
-     * @param mpaaRating рейтинг фильма
+     * @param mpaaRating СЂРµР№С‚РёРЅРі С„РёР»СЊРјР°
      */
     public void setMpaaRating(MpaaRating mpaaRating) {
         this.mpaaRating = mpaaRating;
     }
 
     /**
-     * Получает рейтинг фильма по системе MPAA.
+     * РџРѕР»СѓС‡Р°РµС‚ СЂРµР№С‚РёРЅРі С„РёР»СЊРјР° РїРѕ СЃРёСЃС‚РµРјРµ MPAA.
      *
-     * @return рейтинг фильма
+     * @return СЂРµР№С‚РёРЅРі С„РёР»СЊРјР°
      */
     @XmlElement
     public MpaaRating getMpaaRating() {
@@ -169,18 +169,18 @@ public class Movie implements Comparable<Movie> {
     }
 
     /**
-     * Устанавливает режиссера фильма.
+     * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ СЂРµР¶РёСЃСЃРµСЂР° С„РёР»СЊРјР°.
      *
-     * @param operator режиссер фильма
+     * @param operator СЂРµР¶РёСЃСЃРµСЂ С„РёР»СЊРјР°
      */
     public void setOperator(Person operator) {
         this.operator = operator;
     }
 
     /**
-     * Получает режиссера фильма.
+     * РџРѕР»СѓС‡Р°РµС‚ СЂРµР¶РёСЃСЃРµСЂР° С„РёР»СЊРјР°.
      *
-     * @return оператор фильма
+     * @return РѕРїРµСЂР°С‚РѕСЂ С„РёР»СЊРјР°
      */
     @XmlElement
     public Person getOperator() {
@@ -188,11 +188,11 @@ public class Movie implements Comparable<Movie> {
     }
 
     /**
-     * Возвращает строковое представление фильма.
-     * Строка содержит информацию о названии, координатах, жанре, количестве Оскаров,
-     * рейтинге MPAA и режиссере.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃС‚СЂРѕРєРѕРІРѕРµ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ С„РёР»СЊРјР°.
+     * РЎС‚СЂРѕРєР° СЃРѕРґРµСЂР¶РёС‚ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РЅР°Р·РІР°РЅРёРё, РєРѕРѕСЂРґРёРЅР°С‚Р°С…, Р¶Р°РЅСЂРµ, РєРѕР»РёС‡РµСЃС‚РІРµ РћСЃРєР°СЂРѕРІ,
+     * СЂРµР№С‚РёРЅРіРµ MPAA Рё СЂРµР¶РёСЃСЃРµСЂРµ.
      *
-     * @return строковое представление фильма
+     * @return СЃС‚СЂРѕРєРѕРІРѕРµ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ С„РёР»СЊРјР°
      */
     @Override
     public String toString() {

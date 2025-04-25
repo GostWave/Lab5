@@ -7,8 +7,8 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import java.util.LinkedList;
 
 /**
- * Класс, представляющий коллекцию фильмов.
- * Содержит список объектов {@link Movie}, которые хранятся в коллекции.
+ * РљР»Р°СЃСЃ, РїСЂРµРґСЃС‚Р°РІР»СЏСЋС‰РёР№ РєРѕР»Р»РµРєС†РёСЋ С„РёР»СЊРјРѕРІ.
+ * РЎРѕРґРµСЂР¶РёС‚ СЃРїРёСЃРѕРє РѕР±СЉРµРєС‚РѕРІ {@link Movie}, РєРѕС‚РѕСЂС‹Рµ С…СЂР°РЅСЏС‚СЃСЏ РІ РєРѕР»Р»РµРєС†РёРё.
  */
 @XmlRootElement()
 public class Movies {
@@ -16,18 +16,18 @@ public class Movies {
     private LinkedList<Movie> collection;
 
     /**
-     * Устанавливает коллекцию фильмов.
+     * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РєРѕР»Р»РµРєС†РёСЋ С„РёР»СЊРјРѕРІ.
      *
-     * @param collection коллекция фильмов, которую нужно установить
+     * @param collection РєРѕР»Р»РµРєС†РёСЏ С„РёР»СЊРјРѕРІ, РєРѕС‚РѕСЂСѓСЋ РЅСѓР¶РЅРѕ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ
      */
     public void setMovies(LinkedList<Movie> collection) {
         this.collection = collection;
     }
 
     /**
-     * Получает коллекцию фильмов.
+     * РџРѕР»СѓС‡Р°РµС‚ РєРѕР»Р»РµРєС†РёСЋ С„РёР»СЊРјРѕРІ.
      *
-     * @return коллекция фильмов в виде {@link LinkedList<Movie>}
+     * @return РєРѕР»Р»РµРєС†РёСЏ С„РёР»СЊРјРѕРІ РІ РІРёРґРµ {@link LinkedList<Movie>}
      */
     @XmlElement(name = "movie")
     public LinkedList<Movie> getMovies() {
