@@ -6,8 +6,8 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
- * Основной класс приложения, управляющий его компонентами и выполняющий команды.
- * Реализует паттерн Singleton для обеспечения единственного экземпляра.
+ * РћСЃРЅРѕРІРЅРѕР№ РєР»Р°СЃСЃ РїСЂРёР»РѕР¶РµРЅРёСЏ, СѓРїСЂР°РІР»СЏСЋС‰РёР№ РµРіРѕ РєРѕРјРїРѕРЅРµРЅС‚Р°РјРё Рё РІС‹РїРѕР»РЅСЏСЋС‰РёР№ РєРѕРјР°РЅРґС‹.
+ * Р РµР°Р»РёР·СѓРµС‚ РїР°С‚С‚РµСЂРЅ Singleton РґР»СЏ РѕР±РµСЃРїРµС‡РµРЅРёСЏ РµРґРёРЅСЃС‚РІРµРЅРЅРѕРіРѕ СЌРєР·РµРјРїР»СЏСЂР°.
  */
 public class App {
     private CollectionManager collectionManager;
@@ -18,16 +18,16 @@ public class App {
     Scanner scanner = new Scanner(System.in);
 
     /**
-     * Приватный конструктор для предотвращения создания экземпляров класса извне.
+     * РџСЂРёРІР°С‚РЅС‹Р№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ РїСЂРµРґРѕС‚РІСЂР°С‰РµРЅРёСЏ СЃРѕР·РґР°РЅРёСЏ СЌРєР·РµРјРїР»СЏСЂРѕРІ РєР»Р°СЃСЃР° РёР·РІРЅРµ.
      */
     private App() {
     }
 
     /**
-     * Возвращает единственный экземпляр класса App.
-     * Если он ещё не создан, создаёт новый.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РµРґРёРЅСЃС‚РІРµРЅРЅС‹Р№ СЌРєР·РµРјРїР»СЏСЂ РєР»Р°СЃСЃР° App.
+     * Р•СЃР»Рё РѕРЅ РµС‰С‘ РЅРµ СЃРѕР·РґР°РЅ, СЃРѕР·РґР°С‘С‚ РЅРѕРІС‹Р№.
      *
-     * @return экземпляр класса App
+     * @return СЌРєР·РµРјРїР»СЏСЂ РєР»Р°СЃСЃР° App
      */
     public static App getApp() {
         if (app == null) {
@@ -37,80 +37,80 @@ public class App {
     }
 
     /**
-     * Устанавливает менеджер коллекции.
+     * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РјРµРЅРµРґР¶РµСЂ РєРѕР»Р»РµРєС†РёРё.
      *
-     * @param collectionManager объект CollectionManager
+     * @param collectionManager РѕР±СЉРµРєС‚ CollectionManager
      */
     public void setCollectionManager(CollectionManager collectionManager) {
         this.collectionManager = collectionManager;
     }
 
     /**
-     * Возвращает менеджер коллекции.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РјРµРЅРµРґР¶РµСЂ РєРѕР»Р»РµРєС†РёРё.
      *
-     * @return объект CollectionManager
+     * @return РѕР±СЉРµРєС‚ CollectionManager
      */
     public CollectionManager getCollectionManager() {
         return collectionManager;
     }
 
     /**
-     * Возвращает менеджер команд.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РјРµРЅРµРґР¶РµСЂ РєРѕРјР°РЅРґ.
      *
-     * @return объект CommandManager
+     * @return РѕР±СЉРµРєС‚ CommandManager
      */
     public CommandManager getCommandManager() {
         return commandManager;
     }
 
     /**
-     * Устанавливает менеджер команд.
+     * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РјРµРЅРµРґР¶РµСЂ РєРѕРјР°РЅРґ.
      *
-     * @param commandManager объект CommandManager
+     * @param commandManager РѕР±СЉРµРєС‚ CommandManager
      */
     public void setCommandManager(CommandManager commandManager) {
         this.commandManager = commandManager;
     }
 
     /**
-     * Устанавливает менеджер файлов.
+     * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РјРµРЅРµРґР¶РµСЂ С„Р°Р№Р»РѕРІ.
      *
-     * @param fileManager объект FileManager
+     * @param fileManager РѕР±СЉРµРєС‚ FileManager
      */
     public void setFileManager(FileManager fileManager) {
         this.fileManager = fileManager;
     }
 
     /**
-     * Возвращает менеджер файлов.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РјРµРЅРµРґР¶РµСЂ С„Р°Р№Р»РѕРІ.
      *
-     * @return объект FileManager
+     * @return РѕР±СЉРµРєС‚ FileManager
      */
     public FileManager getFileManager() {
         return fileManager;
     }
 
     /**
-     * Устанавливает консольный обработчик команд.
+     * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РєРѕРЅСЃРѕР»СЊРЅС‹Р№ РѕР±СЂР°Р±РѕС‚С‡РёРє РєРѕРјР°РЅРґ.
      *
-     * @param consoleCaller объект ConsoleCaller
+     * @param consoleCaller РѕР±СЉРµРєС‚ ConsoleCaller
      */
     public void setConsoleCaller(ConsoleCaller consoleCaller) {
         this.consoleCaller = consoleCaller;
     }
 
     /**
-     * Возвращает консольный обработчик команд.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РєРѕРЅСЃРѕР»СЊРЅС‹Р№ РѕР±СЂР°Р±РѕС‚С‡РёРє РєРѕРјР°РЅРґ.
      *
-     * @return объект ConsoleCaller
+     * @return РѕР±СЉРµРєС‚ ConsoleCaller
      */
     public ConsoleCaller getConsoleCaller() {
         return consoleCaller;
     }
 
     /**
-     * Запускает приложение, ожидая ввода команд от пользователя.
-     * В случае ввода "exit" приложение завершает работу.
+     * Р—Р°РїСѓСЃРєР°РµС‚ РїСЂРёР»РѕР¶РµРЅРёРµ, РѕР¶РёРґР°СЏ РІРІРѕРґР° РєРѕРјР°РЅРґ РѕС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ.
+     * Р’ СЃР»СѓС‡Р°Рµ РІРІРѕРґР° "exit" РїСЂРёР»РѕР¶РµРЅРёРµ Р·Р°РІРµСЂС€Р°РµС‚ СЂР°Р±РѕС‚Сѓ.
      */
     public void start() {
         while (true) {
@@ -121,7 +121,7 @@ public class App {
                 }
                 consoleCaller.call(text);
             } catch (NoSuchElementException e){
-                System.out.println("Ctrl + D. Программа будет завершена.");
+                System.out.println("Ctrl + D. РџСЂРѕРіСЂР°РјРјР° Р±СѓРґРµС‚ Р·Р°РІРµСЂС€РµРЅР°.");
                 break;
             }
 
